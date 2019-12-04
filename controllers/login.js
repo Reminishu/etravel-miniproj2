@@ -37,7 +37,9 @@ const getUser = {
         getUser1.findOne({username: username, password: password}, function(err, user){
             if(err)
                 console.log(err);
-                return res.status(500).send();
+                // return res.status(500).send();
+                res.redirect('/');
+                res.render('/', {title: 'Home'});
             if(!user)
                 console.log("User not found!!")
 
