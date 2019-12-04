@@ -1,0 +1,25 @@
+<%- include('includes/head.ejs') %>
+<section id="explore">
+<h1 class="text-center my-sm-4">Explore New Places</h1>
+<br>
+<h4 class="text-center my-sm-4">WHERE WILL YOU GO NEXT?</h4>
+  <!-- Form Start -->
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6 mx-auto">
+  <form action="/explorer" method="get">
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="search"><i class="fa fa-map-marker" aria-hidden="true"></i> Search</label>
+            <input type="text" class="form-control" id="search" name="search">
+          </div>
+        </div>
+        <div class="col-sm-12 text-center"><button type="submit" class="btn-teal py-sm-2 w-50 px-sm-1 py-sm-1 btn"><b><i class="fa fa-search" aria-hidden="true"></i> Search</b></button>
+        </div>            
+      </form>
+    </div>
+    <div class="col-sm-3"></div>
+  <!-- Form End -->
+</div>
+</section>
+
+<%- include('includes/foot.ejs') %>

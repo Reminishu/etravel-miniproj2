@@ -1,0 +1,42 @@
+<%- include('includes/head.ejs') %>
+<h2 class="text-center my-sm-4">Review Our Service</h2>
+      <!-- Form Start -->
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6 mx-auto">
+      <form action="/review" method="POST">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="name"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+              </div>
+              <div class="form-group col-md-3">
+                <label for="flight-class">Rating</label>
+                <select id="flight-class" class="form-control" name="rating">
+                  <option selected>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col-md-9">
+                <label for="review"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Review</label>
+                <input type="messsage" class="form-control" id="review" name="message" required>
+              </div>
+            <div class="col-sm-12 text-center"><button type="submit" class="btn-teal py-sm-2 w-50 px-sm-1 py-sm-1 btn"><b>Submit</b></button>
+            </div>            
+          </form>
+        </div>
+        <div class="col-sm-3"></div>
+      <!-- Form End -->
+      <!-- Reviews Start-->
+      <div class="row rounded-right rounded-left text-center my-sm-5 py-sm-2 px-sm-2 flight-results w-75 mx-auto">
+          <div class="col-sm-12 p-sm-1 py-sm-2"><h2 id="airline-name" class="display-6">Review By Sully</h2></div>
+          <div class="col-sm-12 p-sm-2">
+            <p>Easy. Fast. Efficient.</p>
+            <p><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></p>
+          </div>
+      </div>
+      <!-- Reviews End-->
+<%- include('includes/foot.ejs') %>

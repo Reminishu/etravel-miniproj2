@@ -1,0 +1,61 @@
+<%- include('includes/head.ejs') %>
+<h2 class="text-center my-sm-4">Confirm Your Booking!</h2>
+  <!-- Form Start -->
+  <div class="row rounded-right rounded-left text-center my-sm-5 py-sm-2 px-sm-2 flight-results w-75 mx-auto">
+        <div class="col-sm-12 p-sm-1 py-sm-2"><h2 id="airline-name" class="display-6">Jet Airways</h2></div>
+        <div class="col-sm-4 p-sm-2">
+            <p><b>Source</b> : <span class="source">  </span></p>
+            <p><b>Destination</b> : <span  class="destination"></span></p>
+        </div>
+        <div class="col-sm-4 p-sm-2">
+            <p><b>Departure Date</b> : <span class="date">  </span></p>
+            <p><b>Departure Time</b> : <span  id="departure-time"> 04:30 </span></p> 
+        </div>
+        <div class="col-sm-4 p-sm-2">
+            <p><b>Class</b> : <span id="flight-class"> a-Grade </span></p>
+            <p><b>Fare</b> : <span  id="flight-fare"> 20000 </span></p> 
+            <p><b>Seats</b> : <span  id="flight-seats"> 40 </span></p> 
+        </div>
+    </div>
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6 mx-auto">
+  <form action="/paymentconfirm_success" method="POST">
+        <div class="form-row">
+          <div class="form-group col-md-9">
+            <label for="creditcard"><i class="fa fa-credit-card-o" aria-hidden="true"></i> Card Number</label>
+            <input type="tel" pattern="\d*" maxlength="19" class="form-control" id="creditcard" required>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="card-type">Type</label>
+            <select id="card-type" class="form-control" required>
+              <option selected>VISA</option>
+              <option>MASTERCARD</option>
+              <option>AMEX</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-12 text-center"><button type="submit" class="btn-teal py-sm-2 w-50 px-sm-1 py-sm-1 btn"><b>Proceed!</b></button>
+        </div>            
+      </form>
+    </div>
+    <div class="col-sm-3"></div>
+  <!-- Form End -->
+  <script>
+  
+  function replaceTextInClass(className, text) {
+  var elms = document.querySelectorAll('.' + className), i;
+  for (i = 0; i < elms.length; ++i) {
+      elms[i].textContent = text;
+  }
+}
+
+var date = sessionStorage.getItem("date");
+var dest = sessionStorage.getItem("destination");
+var source = sessionStorage.getItem("source");
+replaceTextInClass('date', date);
+replaceTextInClass('destination', dest);
+replaceTextInClass('source', source);
+
+
+</script>
+<%- include('includes/foot.ejs') %>

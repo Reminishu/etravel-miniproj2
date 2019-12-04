@@ -1,0 +1,39 @@
+<%- include('includes/head.ejs') %>
+<!-- Reviews Start-->
+<div class="row text-center my-sm-5 py-sm-2 px-sm-2 w-75 justify-content-center mx-auto">
+    <div class="col-sm-12 p-sm-1 py-sm-2"><h2 id="city" class="display-6"></h2></div>
+    <div class="col-sm-3 p-sm-2 flight-results mx-sm-1 rounded-right rounded-left image-box">
+        <img src="images/2.jpg" alt="img here"/>  
+        <p>WEATHER!</p>
+        <p>The weather cannot get better than this!</p>
+    </div>
+    <div class="col-sm-3 p-sm-2 flight-results mx-sm-1 rounded-right rounded-left image-box">
+        <img src="images/1.jpg" alt="img here"/>    
+        <p>AMAZING FOOD</p>
+        <p>It is known for its amazing food!</p>
+    </div>
+    <div class="col-sm-3 p-sm-2 flight-results mx-sm-1 rounded-right rounded-left image-box">
+        <img src="images/3.jpg" alt="img here"/>    
+        <p>GREAT COMMUNITY</p>
+        <p>People here are known to be friendly and extremely polite!</p>
+    </div>
+</div>
+<p>Whats stopping you from booking youre next trip to <span id="test1"> </span></p>
+<!-- Reviews End-->
+<script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+        
+        var city = getParameterByName('search');
+
+        document.getElementById('city').innerHTML= city;
+        document.getElementById('test1').innerHTML = city;
+</script>
+<%- include('includes/foot.ejs') %>

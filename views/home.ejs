@@ -1,0 +1,39 @@
+<%- include('includes/head.ejs') %>
+<div class="content-wrap">
+<h2 class="text-center my-sm-4">Find your next Flight</h2>
+      <!-- Form Start -->
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6 mx-auto">
+      <form action="/flights" method="GET">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="source"><i class="fa fa-plane" aria-hidden="true"></i> Source</label>
+                <input type="text" class="form-control" id="source" name="source" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="destination"><i class="fa fa-plane" aria-hidden="true"></i> Destination</label>
+                <input type="text" class="form-control" id="destination" name="destination" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-9">
+                <label for="date"><i class="fa fa-calendar-o" aria-hidden="true"></i> Date</label>
+                <input type="date" class="form-control" id="date" name="date" required>
+              </div>
+              <div class="form-group col-md-3">
+                <label for="flight-class"><i class="fa fa-fighter-jet" aria-hidden="true"></i> Flight Class</label>
+                <select id="flight-class" class="form-control" name="class" required>
+                  <option selected>Economy</option>
+                  <option>Luxury</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-12 text-center"><button type="submit" class="btn-teal py-sm-2 w-50 px-sm-1 py-sm-1 btn" onclick="setCookie()"><b><i class="fa fa-search" aria-hidden="true"></i></b></button>
+            </div>            
+          </form>
+		</div>
+		<p id="test"></p>
+        <div class="col-sm-3"></div>
+	  <!-- Form End -->
+</div>
+<%- include('includes/foot.ejs') %>
