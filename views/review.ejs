@@ -20,10 +20,12 @@
                 </select>
               </div>
             </div>
+            <div class="form-row">
             <div class="form-group col-md-9">
                 <label for="review"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Review</label>
                 <input type="messsage" class="form-control" id="review" name="message" required>
               </div>
+            </div>
             <div class="col-sm-12 text-center"><button type="submit" class="btn-teal py-sm-2 w-50 px-sm-1 py-sm-1 btn"><b>Submit</b></button>
             </div>            
           </form>
@@ -31,19 +33,15 @@
         <div class="col-sm-3"></div>
       <!-- Form End -->
       <!-- Reviews Start-->
+      <% for(let i = 0; i < posts.length; i++) { %>
       <div class="row rounded-right rounded-left text-center my-sm-5 py-sm-2 px-sm-2 flight-results w-75 mx-auto">
-          <div class="col-sm-12 p-sm-1 py-sm-2"><h2 id="airline-name" class="display-6">Review By Nishant</h2></div>
+          <div class="col-sm-12 p-sm-1 py-sm-2"><h2 id="airline-name" class="display-6">Review By <%= posts[i].name %></h2></div>
           <div class="col-sm-12 p-sm-2">
-            <p>Fast, and Reliable.</p>
-            <p><i class="fa fa-tar" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></p>
+            <p><%= posts[i].message %></p>
+            <p>Rating: <%= posts[i].rating%></p>
           </div>
       </div>
-      <div class="row rounded-right rounded-left text-center my-sm-5 py-sm-2 px-sm-2 flight-results w-75 mx-auto">
-        <div class="col-sm-12 p-sm-1 py-sm-2"><h2 id="airline-name" class="display-6">Review By Yash</h2></div>
-        <div class="col-sm-12 p-sm-2">
-          <p>Cheap and good.</p>
-          <p><i class="fa fa-tar" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></p>
-        </div>
-    </div>
+      <% }%>
+
       <!-- Reviews End-->
 <!-- <%- include('includes/foot.ejs') %> -->

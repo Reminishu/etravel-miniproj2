@@ -17,16 +17,20 @@
   },
   "dependencies": {
     "assert": "^1.4.1",
+    "bcrypt": "^3.0.7",
     "body-parser": "^1.19.0",
     "dotenv": "^8.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "express-flash": "0.0.2",
     "express-session": "^1.17.0",
     "favicon": "0.0.2",
     "fs": "0.0.1-security",
     "jquery-parallax.js": "^1.5.0",
     "mongo": "^0.1.0",
     "mongodb": "^3.2.3",
-    "mongoose": "^5.5.4"
+    "mongoose": "^5.5.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
   }
 }

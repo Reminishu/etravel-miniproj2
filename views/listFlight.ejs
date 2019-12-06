@@ -1,67 +1,26 @@
 <%- include('includes/head.ejs') %>
 <div class="content-wrap">
 <!-- Flights Result Display Box Start-->
-<a href="/confirmBooking1k93"><div class="row rounded-right rounded-left text-center my-sm-5 py-sm-2 px-sm-2 flight-results w-75 mx-auto">
-    <div class="col-sm-12 p-sm-1 py-sm-2"><h2 id="airline-name" class="display-6">Delta Air lines</h2></div>
+<% for(let i = 0; i < flight.length; i++) { %>
+<a href="/bookingconfirm"><div class="row rounded-right rounded-left text-center my-sm-5 py-sm-2 px-sm-2 flight-results w-75 mx-auto">
+    <div class="col-sm-12 p-sm-1 py-sm-2"><h2 id="airline-name" class="display-6"><%= flight[i].name %></h2></div>
     <div class="col-sm-4 p-sm-2">
         <p><b>Source</b> : <span class="source">  </span></p>
         <p><b>Destination</b> : <span  class="destination"></span></p>
     </div>
     <div class="col-sm-4 p-sm-2">
         <p><b>Departure Date</b> : <span class="date">  </span></p>
-        <p><b>Departure Time</b> : <span  id="departure-time"> 22:40 </span></p> 
+        <p><b>Departure Time</b> : <span  id="departure-time"> <%= flight[i].departuretime %> </span></p> 
     </div>
     <div class="col-sm-4 p-sm-2">
-        <p><b>Class</b> : <span id="flight-class"> S-Grade </span></p>
-        <p><b>Fare</b> : <span  id="flight-fare"> 25000 </span></p> 
-        <p><b>Seats</b> : <span  id="flight-seats"> 60 </span></p> 
+        <p><b>Class</b> : <span id="flight-class"><%= flight[i].classn %></span></p>
+        <p><b>Fare</b> : <span  id="flight-fare"> <%= flight[i].fare %> </span></p> 
+        <p><b>Seats</b> : <span  id="flight-seats"><%= flight[i].seats %> </span></p> 
     </div>
 </div>
 </a>
 <!-- Flights Result Display Box End-->
-
-<!-- Flights Result Display Box Start-->
-<a href="/confirmBooking2x4f">
-<div class="row rounded-right rounded-left text-center my-sm-5 py-sm-2 px-sm-2 flight-results w-75 mx-auto">
-    <div class="col-sm-12 p-sm-1 py-sm-2"><h2 id="airline-name" class="display-6">Jet Airways</h2></div>
-    <div class="col-sm-4 p-sm-2">
-        <p><b>Source</b> : <span class="source">  </span></p>
-        <p><b>Destination</b> : <span  class="destination"></span></p>
-    </div>
-    <div class="col-sm-4 p-sm-2">
-        <p><b>Departure Date</b> : <span class="date">  </span></p>
-        <p><b>Departure Time</b> : <span  id="departure-time"> 04:30 </span></p> 
-    </div>
-    <div class="col-sm-4 p-sm-2">
-        <p><b>Class</b> : <span id="flight-class"> a-Grade </span></p>
-        <p><b>Fare</b> : <span  id="flight-fare"> 20000 </span></p> 
-        <p><b>Seats</b> : <span  id="flight-seats"> 40 </span></p> 
-    </div>
-</div>
-</a>
-<!-- Flights Result Display Box End-->
-
-<!-- Flights Result Display Box Start-->
-<a href="/confirmBooking283n">
-<div class="row rounded-right rounded-left text-center my-sm-5 py-sm-2 px-sm-2 flight-results w-75 mx-auto">
-    <div class="col-sm-12 p-sm-1 py-sm-2"><h2 id="airline-name" class="display-6">Singapore Airlines</h2></div>
-    <div class="col-sm-4 p-sm-2">
-        <p><b>Source</b> : <span class="source">  </span></p>
-        <p><b>Destination</b> : <span  class="destination"></span></p>
-    </div>
-    <div class="col-sm-4 p-sm-2">
-        <p><b>Departure Date</b> : <span class="date">  </span></p>
-        <p><b>Departure Time</b> : <span id="departure-time"> 15:00 </span></p> 
-    </div>
-    <div class="col-sm-4 p-sm-2">
-        <p><b>Class</b> : <span id="flight-class"> A-Grade </span></p>
-        <p><b>Fare</b> : <span  id="flight-fare"> 30000 </span></p> 
-        <p><b>Seats</b> : <span  id="flight-seats"> 100 </span></p> 
-    </div>
-</div>
-</div>
-</a>
-<!-- Flights Result Display Box End-->
+<% } %>
 <script>
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;

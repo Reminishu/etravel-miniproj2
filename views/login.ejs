@@ -1,6 +1,9 @@
 <%- include('includes/head.ejs') %>
 <h2 class="text-center my-sm-4">Log In</h2>
-    <!-- Form Start -->
+<br>
+<h4 id="loginstatus" class="text-center my-sm-3"></h4>
+<h4 id="logins"></h4>
+     <!-- Form Start -->
     <div class="col-sm-3"></div>
     <div class="col-sm-6 mx-auto">
     <form action="/login" method="POST">
@@ -19,7 +22,17 @@
         <div class="col-sm-12 text-center"><button type="submit" class="btn-teal py-sm-2 w-50 px-sm-1 py-sm-1 btn"><b><i class="fa fa-arrow-right" aria-hidden="true"></i> Submit</b></button>
         </div>            
         </form>
+        <br>
+        <hr>
+        <h4 class="text-center">Don't have an id?</h4>
+        <h4 class="text-center"><a class="text-center" href="/sign-up">Sign Up</a></h4>
     </div>
     <div class="col-sm-3"></div>
+    
+    <% if (messages) {%>
+    <script>
+          document.getElementById("loginstatus").innerHTML += "<%= messages %>";
+    </script>
+    <% } %>
     <!-- Form End -->
 <%- include('includes/foot.ejs') %>

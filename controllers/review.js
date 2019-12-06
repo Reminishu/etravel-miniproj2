@@ -4,7 +4,10 @@ const review = mongoose.model('review')
 
 const getReview = {
     getP(req, res, next)  {
-        res.render('review', {title: 'Review'});
+    review.find({}, function(err, posts){
+        res.render('review', {title: 'Review', posts: posts});
+    })
+            
 },
     postP(req, res, next) {
         console.log(req.body);
@@ -18,11 +21,12 @@ const getReview = {
     newreview.save(function (transactionoutput) {
 console.log(transactionoutput);
     });
-
-    res.redirect('/success_response');
+    res.redirect('/review')
+    // res.redirect('/success_response');
 },
     getR(req, res, next)    {
-        res.render('success_response', {title: 'Thank you!'});
+        // res.render('success_response', {title: 'Thank you!'});
+        res.render('review')
     }
 };
 

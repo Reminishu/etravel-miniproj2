@@ -1,5 +1,6 @@
 <%- include('includes/head.ejs') %>
 <div class="content-wrap">
+<h1 id="userwel" class="text-center my-sm-3"></h1>
 <h2 class="text-center my-sm-4">Find your next Flight</h2>
       <!-- Form Start -->
       <div class="col-sm-3"></div>
@@ -32,8 +33,13 @@
             </div>            
           </form>
 		</div>
-		<p id="test"></p>
-        <div class="col-sm-3"></div>
+		
+    <div class="col-sm-3"></div>
+    <% if (userwel) {%>
+      <script>
+            document.getElementById("userwel").innerHTML += "<%= userwel %>";
+      </script>
+      <% } %>
 	  <!-- Form End -->
 </div>
 <%- include('includes/foot.ejs') %>

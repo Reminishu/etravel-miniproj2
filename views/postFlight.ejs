@@ -1,0 +1,49 @@
+<%- include('includes/head.ejs') %>
+<h2 class="text-center my-sm-4">Sign Up</h2>
+    <!-- Form Start -->
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 mx-auto">
+    <form action="/postFlight" method="POST">
+        <div class="form-row">
+                <div class="form-group col-md-12">
+                <label for="idn"><i class="fa fa-key" aria-hidden="true"></i> idn</label>
+                <input type="text" class="form-control" id="idn" name="idn" required>
+                </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+            <label for="departuretime">Dept Time</label>
+            <input type="text" class="form-control" id="departuretime" name="departuretime" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+            <label for="classn"><i class="fa fa-envelope" aria-hidden="true"></i> Class</label>
+            <input type="text" class="form-control" id="classn" name="classn" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+            <label for="seats">seats</label>
+            <input type="number" class="form-control" id="seats" name="seats" required>
+            </div>
+        </div>  
+        <div class="form-row">
+            <div class="form-group col-md-12">
+            <label for="fare"><i class="fa fa-key" aria-hidden="true"></i> Fare</label>
+            <input type="number" class="form-control" id="fare" name="fare" required>
+            </div>
+        </div>
+        <div class="col-sm-12 text-center"><button type="submit" class="btn-teal py-sm-2 w-50 px-sm-1 py-sm-1 btn"><b><i class="fa fa-arrow-right" aria-hidden="true"></i> Submit</b></button>
+        </div>            
+        </form>
+    </div>
+    <div class="col-sm-3"></div>
+    <!-- Form End -->
+<%- include('includes/foot.ejs') %>
