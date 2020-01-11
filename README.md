@@ -1,5 +1,5 @@
 # etravel-miniproj2
-Mini Project 2
+AP Mini Project 2 [e-Travel Website]
 
 Steps:
 1. Run 'npm install' to install dependencies.
